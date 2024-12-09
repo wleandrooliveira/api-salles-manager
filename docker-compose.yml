@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:12.0-alpine  
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:  
+      POSTGRES_PASSWORD: Quimica@7295  
+      POSTGRES_DB: db_vendas
+    volumes:  
+      - "./.docker/dbdata:/var/lib/postgresql/data"
